@@ -1,39 +1,44 @@
-[gd_scene load_steps=5 format=3 uid="uid://b65j60ghmb14l"]
+[gd_scene load_steps=7 format=3 uid="uid://b65j60ghmb14l"]
 
 [ext_resource type="Script" uid="uid://c0pgm05s3g15b" path="res://Player/player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://cdov2c47v5gv4" path="res://Player/item_positioner_check.gd" id="2_btcbx"]
+[ext_resource type="Texture2D" uid="uid://bhhc7o77o4h72" path="res://Player/flashlight texture.jpg" id="3_gwnis"]
 [ext_resource type="PackedScene" uid="uid://d056c15esv3yk" path="res://Player/interaction_controller.tscn" id="3_i3pqv"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4ntmi"]
 load_path = "res://.godot/imported/resting_cursor.png-7f74ae60d87d178af664c106e926bb62.ctex"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_4flbx")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -0.63)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 
 [node name="RightCast" type="RayCast3D" parent="Camera3D"]
 transform = Transform3D(0, -1.0000001, 0, 1.0000001, 0, 0, 0, 0, 1, 0, 0, 0)
-target_position = Vector3(0, -1.25, 0)
+target_position = Vector3(0, -0.7, 0)
 
 [node name="LeftCast" type="RayCast3D" parent="Camera3D"]
 transform = Transform3D(-4.3711392e-08, 1.0000001, 0, -1.0000001, -4.3711392e-08, 0, 0, 0, 1, 0, 0, 0)
-target_position = Vector3(0, -1.25, 0)
+target_position = Vector3(0, -0.7, 0)
 
 [node name="Item Positioner" type="Marker3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+script = ExtResource("2_btcbx")
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="Camera3D/Item Positioner"]
 visible = false
 radius = 0.1
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_sh265")
+[node name="Flashlight" type="SpotLight3D" parent="Camera3D"]
+light_projector = ExtResource("3_gwnis")
+shadow_enabled = true
+spot_range = 12.564081
+spot_angle = 26.880835
 
-[node name="Player UI" type="Control" parent="."]
+[node name="Player UI" type="Control" parent="Camera3D"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -47,7 +52,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Cursor" type="TextureRect" parent="Player UI"]
+[node name="Cursor" type="TextureRect" parent="Camera3D/Player UI"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -63,6 +68,11 @@ grow_vertical = 2
 texture = SubResource("CompressedTexture2D_4ntmi")
 stretch_mode = 3
 
-[node name="Interaction Controller" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_i3pqv")]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_sh265")
+
+[node name="Interaction Controller" parent="." node_paths=PackedStringArray("player", "item_positioner") instance=ExtResource("3_i3pqv")]
 unique_name_in_owner = true
 player = NodePath("..")
+item_positioner = NodePath("../Camera3D/Item Positioner")

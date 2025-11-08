@@ -2,20 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2ugtww3eh3om"
-path="res://.godot/imported/grabbing_cursor.png-5b49485aab4229781190e408ad5abd31.ctex"
+uid="uid://bw8br5vemmshw"
+path.s3tc="res://.godot/imported/scene_firewood.png-4b5000066609a2a28413f69cea7893c5.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "a8ed5ea60363b3a0c89390de21e64b0d"
 }
 
 [deps]
 
-source_file="res://Player/grabbing_cursor.png"
-dest_files=["res://.godot/imported/grabbing_cursor.png-5b49485aab4229781190e408ad5abd31.ctex"]
+source_file="res://Trash Room Scene/scene_firewood.png"
+dest_files=["res://.godot/imported/scene_firewood.png-4b5000066609a2a28413f69cea7893c5.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -23,7 +27,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -37,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

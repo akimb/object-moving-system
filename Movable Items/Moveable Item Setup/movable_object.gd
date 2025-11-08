@@ -6,6 +6,8 @@ signal highlight_object
 @export var collision_shape : CollisionShape3D = null
 @export var holding_offset : Vector3 = Vector3.ZERO
 
+@onready var interaction_component: Node = $"Interaction Component"
+
 var default_rotation_degrees : Vector3 = Vector3.ZERO
 var default_mesh_rotation_degrees : Vector3 = Vector3.ZERO
 var default_collider_rotation_degrees : Vector3 = Vector3.ZERO
@@ -28,13 +30,13 @@ func highlighter(can_highlight: bool) -> void:
 func rotate_object_y(rotation_amount: float) -> void:
 	var rotate_tween := get_tree().create_tween()
 	rotate_tween.set_parallel()
-	rotate_tween.tween_property(object_mesh, "rotation_degrees:y", object_mesh.rotation_degrees.y + rotation_amount, 0.1)
+	rotate_tween.tween_property(object_mesh, "rotation_degrees:y", object_mesh.rotation_degrees.y + rotation_amount, 0.2)
 	collision_shape.rotate_y(deg_to_rad(rotation_amount))
 
 func rotate_object_z(rotation_amount: float) -> void:
 	var rotate_tween := get_tree().create_tween()
 	rotate_tween.set_parallel()
-	rotate_tween.tween_property(object_mesh, "rotation_degrees:z", object_mesh.rotation_degrees.z + rotation_amount, 0.1)
+	rotate_tween.tween_property(object_mesh, "rotation_degrees:z", object_mesh.rotation_degrees.z + rotation_amount, 0.2)
 	collision_shape.rotate_x(deg_to_rad(rotation_amount))
 
 func reset_collision_transform() -> void:

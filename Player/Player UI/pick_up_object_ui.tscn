@@ -1,0 +1,170 @@
+[gd_scene load_steps=13 format=3 uid="uid://bx0q7k4cnruyi"]
+
+[ext_resource type="Script" uid="uid://usnw0mplx0qm" path="res://Player/Player UI/pick_up_object_ui.gd" id="1_ft3ce"]
+[ext_resource type="FontFile" uid="uid://sc36ng157kis" path="res://UI/Fonts/Liberation Serif/LiberationSerif-Bold.ttf" id="1_liuay"]
+[ext_resource type="FontFile" uid="uid://bwiujpskbc62h" path="res://UI/Fonts/Liberation Serif/LiberationSerif-BoldItalic.ttf" id="2_w36ul"]
+[ext_resource type="FontFile" uid="uid://s8s22ej2g1jd" path="res://UI/Fonts/Liberation Serif/LiberationSerif-Italic.ttf" id="3_urar6"]
+[ext_resource type="FontFile" uid="uid://wc6l84ossaps" path="res://UI/Fonts/Liberation Serif/LiberationSerif-Regular.ttf" id="4_xfgf6"]
+[ext_resource type="PackedScene" uid="uid://culdcn8ku6bau" path="res://Player/Player UI/ui_button.tscn" id="6_xhqb2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btcbx"]
+bg_color = Color(0, 0, 0, 0.8392157)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_apopc"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+
+[sub_resource type="Theme" id="Theme_gwnis"]
+Panel/styles/panel = SubResource("StyleBoxFlat_btcbx")
+RichTextLabel/constants/outline_size = 10
+RichTextLabel/font_sizes/bold_font_size = 40
+RichTextLabel/font_sizes/bold_italics_font_size = 40
+RichTextLabel/font_sizes/italics_font_size = 40
+RichTextLabel/font_sizes/mono_font_size = 40
+RichTextLabel/font_sizes/normal_font_size = 40
+RichTextLabel/fonts/bold_font = ExtResource("1_liuay")
+RichTextLabel/fonts/bold_italics_font = ExtResource("2_w36ul")
+RichTextLabel/fonts/italics_font = ExtResource("3_urar6")
+RichTextLabel/fonts/normal_font = ExtResource("4_xfgf6")
+RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_apopc")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w36ul"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ft3ce"]
+blend_mode = 1
+
+[sub_resource type="Environment" id="Environment_urar6"]
+background_mode = 1
+
+[node name="Pick Up Object UI" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ft3ce")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.13725491, 0.13725491, 0.13725491, 0.74509805)
+
+[node name="UI Container" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -345.0
+offset_top = -191.5
+offset_right = 345.0
+offset_bottom = 191.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_gwnis")
+
+[node name="Button Container" type="HBoxContainer" parent="UI Container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 107.0
+offset_right = 150.0
+offset_bottom = 151.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 75
+
+[node name="Drop It" parent="UI Container/Button Container" instance=ExtResource("6_xhqb2")]
+layout_mode = 2
+text = "Drop it"
+
+[node name="Pick Up" parent="UI Container/Button Container" instance=ExtResource("6_xhqb2")]
+layout_mode = 2
+theme_type_variation = &"Accept_Button"
+text = "Pick up"
+
+[node name="Prompt" type="RichTextLabel" parent="UI Container"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -134.0
+offset_bottom = -134.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[b]Pick up [object]?[/b]"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Item Viewer" type="Panel" parent="UI Container"]
+custom_minimum_size = Vector2(133, 133)
+layout_mode = 0
+offset_left = 279.0
+offset_top = 120.5
+offset_right = 412.0
+offset_bottom = 253.5
+theme_override_styles/panel = SubResource("StyleBoxFlat_w36ul")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="UI Container/Item Viewer"]
+material = SubResource("CanvasItemMaterial_ft3ce")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="UI Container/Item Viewer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(133, 133)
+render_target_update_mode = 4
+
+[node name="Item Container" type="Marker3D" parent="UI Container/Item Viewer/SubViewportContainer/SubViewport"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="UI Container/Item Viewer/SubViewportContainer/SubViewport"]
+environment = SubResource("Environment_urar6")
+
+[node name="Camera3D" type="Camera3D" parent="UI Container/Item Viewer/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07719141, 0.22437912)
+projection = 1
+size = 0.5
+
+[node name="SpotLight3D" type="SpotLight3D" parent="UI Container/Item Viewer/SubViewportContainer/SubViewport/Camera3D"]
+light_energy = 0.5
+shadow_enabled = true
+
+[connection signal="pressed" from="UI Container/Button Container/Drop It" to="." method="_on_drop_it_pressed"]
+[connection signal="pressed" from="UI Container/Button Container/Pick Up" to="." method="_on_pick_up_pressed"]

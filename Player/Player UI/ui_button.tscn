@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://culdcn8ku6bau"]
+
+[ext_resource type="Theme" uid="uid://bga2rn5ffjcbs" path="res://Player/Player UI/pick_up_ui_theme.tres" id="1_7inp4"]
+[ext_resource type="Script" uid="uid://dkuo051fg061j" path="res://Player/Player UI/ui_button.gd" id="2_cttsj"]
+
+[node name="Button" type="Button"]
+theme = ExtResource("1_7inp4")
+theme_type_variation = &"Decline_Button"
+text = "text"
+script = ExtResource("2_cttsj")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

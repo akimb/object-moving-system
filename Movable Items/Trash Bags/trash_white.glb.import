@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bxrf1eduk3rl"
-path="res://.godot/imported/cig_1.glb-7c5567b283d3f3dc322f8d9fb9d10520.scn"
+uid="uid://dxrl06dt75mm1"
+path="res://.godot/imported/trash_white.glb-6f2e4da30efd4004a5b7f6ec54455bfd.scn"
 
 [deps]
 
-source_file="res://Movable Items/Ciggy/cig_1.glb"
-dest_files=["res://.godot/imported/cig_1.glb-7c5567b283d3f3dc322f8d9fb9d10520.scn"]
+source_file="res://Movable Items/Trash Bags/trash_white.glb"
+dest_files=["res://.godot/imported/trash_white.glb-6f2e4da30efd4004a5b7f6ec54455bfd.scn"]
 
 [params]
 

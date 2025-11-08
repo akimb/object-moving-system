@@ -4,9 +4,8 @@
 render_priority = 2
 transparency = 1
 shading_mode = 0
-albedo_color = Color(0, 0, 1, 1)
 grow = true
-grow_amount = 0.01
+grow_amount = 0.005
 stencil_mode = 3
 stencil_flags = 1
 stencil_compare = 5
@@ -19,4 +18,5 @@ transparency = 1
 albedo_color = Color(1, 1, 1, 0.05490196)
 stencil_mode = 1
 stencil_flags = 2
-stencil_color = Color(0, 0, 1, 1)
+stencil_color = Color(1, 1, 1, 1)
+stencil_outline_thickness = 0.005

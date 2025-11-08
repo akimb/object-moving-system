@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=3 uid="uid://dstl2iu82cdrc"]
+
+[ext_resource type="Script" uid="uid://b6rldssm2mbxk" path="res://sound_bus.gd" id="1_1x3ei"]
+[ext_resource type="AudioStream" uid="uid://bhcjbfg3ppruq" path="res://Sounds/night_ambience.ogg" id="2_ff6pd"]
+[ext_resource type="AudioStream" uid="uid://c0kngdiy0nvvb" path="res://Sounds/pick_up.ogg" id="3_ff6pd"]
+[ext_resource type="AudioStream" uid="uid://bdleuy7qeby1i" path="res://Sounds/ui_popup.ogg" id="4_p54ma"]
+[ext_resource type="AudioStream" uid="uid://dsqemlkqs3gv5" path="res://Sounds/ui_button_click.ogg" id="5_aawyp"]
+[ext_resource type="AudioStream" uid="uid://spm85oyk1ltw" path="res://Sounds/ui_hover_button.ogg" id="6_bilqy"]
+[ext_resource type="AudioStream" uid="uid://bv5au6jqkqxrr" path="res://Sounds/flashlight.ogg" id="7_bilqy"]
+
+[node name="SoundBus" type="Node"]
+script = ExtResource("1_1x3ei")
+
+[node name="Night Ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ff6pd")
+volume_db = 5.0
+
+[node name="Pick Up" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ff6pd")
+max_polyphony = 10
+
+[node name="UI Popup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_p54ma")
+
+[node name="UI Button Hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_aawyp")
+max_polyphony = 10
+
+[node name="UI Button Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_bilqy")
+
+[node name="Flashlight" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_bilqy")
+max_polyphony = 10
