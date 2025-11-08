@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c327lrsdw5lo8"]
+
+[ext_resource type="Script" uid="uid://cq0aqmr7biets" path="res://Movable Items/Moveable Item Setup/interaction_component.gd" id="1_l0w6l"]
+
+[node name="Interaction Component" type="Node"]
+script = ExtResource("1_l0w6l")

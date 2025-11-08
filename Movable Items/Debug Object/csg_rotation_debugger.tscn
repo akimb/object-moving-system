@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5ck55gey18jx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ucqbq"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w0f46"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cte7k"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ypwjj"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4dnnw"]
+albedo_color = Color(0, 1, 0, 1)
+
+[node name="CSG ROTATION DEBUGGER" type="Node3D"]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+radius = 0.1
+material = SubResource("StandardMaterial3D_ucqbq")
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+radius = 0.1
+material = SubResource("StandardMaterial3D_w0f46")
+
+[node name="CSGSphere3D3" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+radius = 0.1
+material = SubResource("StandardMaterial3D_cte7k")
+
+[node name="CSGSphere3D4" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+radius = 0.1
+material = SubResource("StandardMaterial3D_ypwjj")
+
+[node name="CSGSphere3D5" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+radius = 0.1
+material = SubResource("StandardMaterial3D_4dnnw")
+
+[node name="CSGSphere3D6" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+radius = 0.1
+material = SubResource("StandardMaterial3D_4dnnw")

@@ -1,0 +1,68 @@
+[gd_scene load_steps=13 format=3 uid="uid://c35mso3v4mkml"]
+
+[ext_resource type="PackedScene" uid="uid://1iyti4js6yuy" path="res://Movable Items/Ciggy/ciggy.tscn" id="1_javah"]
+[ext_resource type="PackedScene" uid="uid://b65j60ghmb14l" path="res://Player/player.tscn" id="2_uiouw"]
+[ext_resource type="PackedScene" uid="uid://vrmvfwid4up5" path="res://Movable Items/Cash/cash.tscn" id="4_lqjdl"]
+[ext_resource type="PackedScene" uid="uid://5ivbeix7wp38" path="res://Movable Items/Debug Object/debug_shape.tscn" id="4_oxyw6"]
+[ext_resource type="PackedScene" uid="uid://34kkkm01ohxg" path="res://Movable Items/Glass Bottle/glass_bottle.tscn" id="5_0pfpr"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7rft0"]
+load_path = "res://.godot/imported/texture_13.png-0a4807fa5a4f99ae572c4a9a0388d9cc.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uiouw"]
+albedo_texture = SubResource("CompressedTexture2D_7rft0")
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_javah"]
+material = SubResource("StandardMaterial3D_uiouw")
+size = Vector2(50, 50)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_lqjdl"]
+data = PackedVector3Array(25, 0, 25, -25, 0, 25, 25, 0, -25, -25, 0, 25, -25, 0, -25, 25, 0, -25)
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_7rft0"]
+
+[sub_resource type="Sky" id="Sky_uiouw"]
+sky_material = SubResource("PhysicalSkyMaterial_7rft0")
+
+[sub_resource type="Environment" id="Environment_javah"]
+background_mode = 2
+sky = SubResource("Sky_uiouw")
+
+[node name="Testing Grounds" type="Node3D"]
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_javah")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_lqjdl")
+
+[node name="Player" parent="." instance=ExtResource("2_uiouw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17019886, 0, -0.30523014)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_javah")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_energy = 5.0
+shadow_enabled = true
+
+[node name="Ciggy" parent="." instance=ExtResource("1_javah")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6910836, 2.0388446, 0.5945326)
+
+[node name="Debug Shape" parent="." instance=ExtResource("4_oxyw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19270873, 0.49999952, -3.097654)
+
+[node name="Debug Shape2" parent="." instance=ExtResource("4_oxyw6")]
+transform = Transform3D(0.6806186, -0.73263794, 0, 0.73263794, 0.6806186, 0, 0, 0, 1, 3.7227108, 2.0121777, -1.4575152)
+
+[node name="Glass Bottle" parent="." instance=ExtResource("5_0pfpr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16525793, 0.9999995, -2.9248629)
+
+[node name="Cash" parent="." instance=ExtResource("4_lqjdl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.030974746, 0.9999995, -3.4169102)

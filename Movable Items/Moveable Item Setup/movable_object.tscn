@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://db1l54fe2bhjh"]
+
+[ext_resource type="Script" uid="uid://hcpscds5bimt" path="res://Movable Items/Moveable Item Setup/movable_object.gd" id="1_rwc7l"]
+[ext_resource type="PackedScene" uid="uid://c327lrsdw5lo8" path="res://Movable Items/Moveable Item Setup/interaction_component.tscn" id="2_3y7l8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5iwxq"]
+bounce = 0.5
+absorbent = true
+
+[node name="Movable Object" type="RigidBody3D" node_paths=PackedStringArray("object_mesh", "collision_shape")]
+collision_layer = 2
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_5iwxq")
+script = ExtResource("1_rwc7l")
+object_mesh = NodePath("")
+collision_shape = NodePath("")
+
+[node name="Interaction Component" parent="." node_paths=PackedStringArray("object_ref") instance=ExtResource("2_3y7l8")]
+object_ref = NodePath("..")

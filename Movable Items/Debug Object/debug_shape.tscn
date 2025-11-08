@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://5ivbeix7wp38"]
+
+[ext_resource type="PackedScene" uid="uid://db1l54fe2bhjh" path="res://Movable Items/Moveable Item Setup/movable_object.tscn" id="1_tdi6j"]
+[ext_resource type="Texture2D" uid="uid://dk50lvs6g4i1u" path="res://Prototype_Textures/Orange/texture_01.png" id="2_jb5dp"]
+[ext_resource type="PackedScene" uid="uid://c5ck55gey18jx" path="res://Movable Items/Debug Object/csg_rotation_debugger.tscn" id="3_w0f46"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6g6h1"]
+albedo_texture = ExtResource("2_jb5dp")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_qqjif"]
+material = SubResource("StandardMaterial3D_6g6h1")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jb5dp"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[node name="Debug Shape" node_paths=PackedStringArray("object_mesh", "collision_shape") instance=ExtResource("1_tdi6j")]
+object_mesh = NodePath("MeshInstance3D")
+collision_shape = NodePath("CollisionShape3D")
+holding_offset = Vector3(1, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
+mesh = SubResource("BoxMesh_qqjif")
+
+[node name="CSG ROTATION DEBUGGER" parent="MeshInstance3D" index="0" instance=ExtResource("3_w0f46")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("ConvexPolygonShape3D_jb5dp")
