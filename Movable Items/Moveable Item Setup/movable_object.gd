@@ -18,7 +18,6 @@ func _ready() -> void:
 	default_rotation_degrees = rotation_degrees
 	default_mesh_rotation_degrees = object_mesh.rotation_degrees
 	default_collider_rotation_degrees = collision_shape.rotation_degrees
-	#print(default_rotation_degrees)
 
 func highlighter(can_highlight: bool) -> void:
 	if can_highlight:

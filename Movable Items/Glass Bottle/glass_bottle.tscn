@@ -58,6 +58,7 @@ skeleton = NodePath("")
 [node name="CSG ROTATION DEBUGGER" parent="glass_bottle_1" index="0" instance=ExtResource("3_q15rt")]
 unique_name_in_owner = true
 transform = Transform3D(0.33, 0, 0, 0, 0.33, 0, 0, 0, 0.33, 0, 0.16271082, 0)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
 shape = SubResource("ConvexPolygonShape3D_2fbxj")

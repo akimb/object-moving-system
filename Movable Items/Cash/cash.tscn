@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://vrmvfwid4up5"]
+[gd_scene load_steps=10 format=4 uid="uid://vrmvfwid4up5"]
 
 [ext_resource type="Script" uid="uid://hcpscds5bimt" path="res://Movable Items/Moveable Item Setup/movable_object.gd" id="1_h64fq"]
 [ext_resource type="Texture2D" uid="uid://qr02nsxgyhr0" path="res://Movable Items/Cash/cash_1_money_1.png" id="2_vi6e7"]
+[ext_resource type="PackedScene" uid="uid://c5ck55gey18jx" path="res://Movable Items/Debug Object/csg_rotation_debugger.tscn" id="3_4ynbd"]
 [ext_resource type="PackedScene" uid="uid://c327lrsdw5lo8" path="res://Movable Items/Moveable Item Setup/interaction_component.tscn" id="3_bdvrr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h64fq"]
@@ -60,6 +61,10 @@ collision_shape = NodePath("CollisionShape3D")
 [node name="cash_1" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_0yety")
 skeleton = NodePath("")
+
+[node name="CSG ROTATION DEBUGGER" parent="cash_1" instance=ExtResource("3_4ynbd")]
+unique_name_in_owner = true
+transform = Transform3D(0.275, 0, 0, 0, 0.275, 0, 0, 0, 0.275, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_pgew1")

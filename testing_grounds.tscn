@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://c35mso3v4mkml"]
+[gd_scene load_steps=14 format=3 uid="uid://c35mso3v4mkml"]
 
 [ext_resource type="PackedScene" uid="uid://1iyti4js6yuy" path="res://Movable Items/Ciggy/ciggy.tscn" id="1_javah"]
 [ext_resource type="PackedScene" uid="uid://b65j60ghmb14l" path="res://Player/player.tscn" id="2_uiouw"]
 [ext_resource type="PackedScene" uid="uid://vrmvfwid4up5" path="res://Movable Items/Cash/cash.tscn" id="4_lqjdl"]
 [ext_resource type="PackedScene" uid="uid://5ivbeix7wp38" path="res://Movable Items/Debug Object/debug_shape.tscn" id="4_oxyw6"]
 [ext_resource type="PackedScene" uid="uid://34kkkm01ohxg" path="res://Movable Items/Glass Bottle/glass_bottle.tscn" id="5_0pfpr"]
+[ext_resource type="PackedScene" uid="uid://ci2457okg8que" path="res://Movable Items/Meat/meat.tscn" id="6_0pfpr"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7rft0"]
 load_path = "res://.godot/imported/texture_13.png-0a4807fa5a4f99ae572c4a9a0388d9cc.s3tc.ctex"
@@ -66,3 +67,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16525793, 0.9999995, -2.924
 
 [node name="Cash" parent="." instance=ExtResource("4_lqjdl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.030974746, 0.9999995, -3.4169102)
+
+[node name="Meat" parent="." instance=ExtResource("6_0pfpr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.59896594, 0.5389998, -0.61053216)
