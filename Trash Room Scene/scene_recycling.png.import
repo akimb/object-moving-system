@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8735pibt0hxd"
 path.s3tc="res://.godot/imported/scene_recycling.png-b8364c0a4510024f4ddb2cfb78762dec.s3tc.ctex"
+path.etc2="res://.godot/imported/scene_recycling.png-b8364c0a4510024f4ddb2cfb78762dec.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Trash Room Scene/scene_recycling.png"
-dest_files=["res://.godot/imported/scene_recycling.png-b8364c0a4510024f4ddb2cfb78762dec.s3tc.ctex"]
+dest_files=["res://.godot/imported/scene_recycling.png-b8364c0a4510024f4ddb2cfb78762dec.s3tc.ctex", "res://.godot/imported/scene_recycling.png-b8364c0a4510024f4ddb2cfb78762dec.etc2.ctex"]
 
 [params]
 

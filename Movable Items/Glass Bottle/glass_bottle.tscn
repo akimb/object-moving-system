@@ -52,9 +52,6 @@ mass = 0.2
 object_mesh = NodePath("glass_bottle_1")
 collision_shape = NodePath("CollisionShape3D")
 
-[node name="Interaction Component" parent="." index="0"]
-interaction_type = 3
-
 [node name="glass_bottle_1" type="MeshInstance3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.125, 0)
 mesh = SubResource("ArrayMesh_70xul")

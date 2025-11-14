@@ -72,6 +72,7 @@ func _movement(delta) -> void:
 	
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+		
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y += JUMP_VELOCITY
 	

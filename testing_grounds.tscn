@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://c35mso3v4mkml"]
+[gd_scene load_steps=41 format=4 uid="uid://c35mso3v4mkml"]
 
 [ext_resource type="Script" uid="uid://dfl6rd13jp1cn" path="res://testing_grounds.gd" id="1_uu3of"]
 [ext_resource type="Shader" uid="uid://bk2ns2s6iefcw" path="res://starry_night.gdshader" id="2_g5og6"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ckaktts0rgeti" path="res://table_large_2_wood_1.png" id="8_ojjep"]
 [ext_resource type="PackedScene" uid="uid://bx7m8ht4xxepu" path="res://Movable Items/Trash Bags/white_trash_bag.tscn" id="10_gceh4"]
 [ext_resource type="Texture2D" uid="uid://b3hqn8ij5or3e" path="res://Trash Room Scene/scene_concrete.png" id="11_skgxu"]
+[ext_resource type="PackedScene" uid="uid://dbyeldr8a14bm" path="res://Movable Items/car_battery.tscn" id="14_poeod"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7rft0"]
 load_path = "res://.godot/imported/texture_13.png-0a4807fa5a4f99ae572c4a9a0388d9cc.s3tc.ctex"
@@ -221,7 +222,6 @@ environment = SubResource("Environment_javah")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.8917711, 0.41812867, 0.17295295, -0.13131759, -0.12662506, 0.98322, 0.43301272, -0.8995189, -0.05801284, 0, 0, 0)
-light_energy = 0.01
 shadow_enabled = true
 
 [node name="Debug Shape" parent="." instance=ExtResource("4_oxyw6")]
@@ -310,6 +310,9 @@ shape = SubResource("ConcavePolygonShape3D_b8y0g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="scene/Plane_005/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_iay1p")
+
+[node name="Car Battery" parent="scene" instance=ExtResource("14_poeod")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4185958, 0, -0.81979275)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22671, 3.6513293, -3.3963509)

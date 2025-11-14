@@ -57,6 +57,3 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
 shape = SubResource("ConvexPolygonShape3D_0olcw")
-
-[node name="Interaction Component" parent="." index="2"]
-interaction_type = 4

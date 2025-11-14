@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://kso02ewd30k4"
 path.s3tc="res://.godot/imported/scene_milkcratered.png-910ab98b8d468a98f62b486fec5e9ee2.s3tc.ctex"
+path.etc2="res://.godot/imported/scene_milkcratered.png-910ab98b8d468a98f62b486fec5e9ee2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Trash Room Scene/scene_milkcratered.png"
-dest_files=["res://.godot/imported/scene_milkcratered.png-910ab98b8d468a98f62b486fec5e9ee2.s3tc.ctex"]
+dest_files=["res://.godot/imported/scene_milkcratered.png-910ab98b8d468a98f62b486fec5e9ee2.s3tc.ctex", "res://.godot/imported/scene_milkcratered.png-910ab98b8d468a98f62b486fec5e9ee2.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://qjmj770q7bqu"
 path.s3tc="res://.godot/imported/scene_woodwall.png-bde00cb8dd484f43bae91c078b529c8d.s3tc.ctex"
+path.etc2="res://.godot/imported/scene_woodwall.png-bde00cb8dd484f43bae91c078b529c8d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Trash Room Scene/scene_woodwall.png"
-dest_files=["res://.godot/imported/scene_woodwall.png-bde00cb8dd484f43bae91c078b529c8d.s3tc.ctex"]
+dest_files=["res://.godot/imported/scene_woodwall.png-bde00cb8dd484f43bae91c078b529c8d.s3tc.ctex", "res://.godot/imported/scene_woodwall.png-bde00cb8dd484f43bae91c078b529c8d.etc2.ctex"]
 
 [params]
 

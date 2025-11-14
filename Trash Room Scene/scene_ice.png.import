@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://df2jkfe6eewny"
 path.s3tc="res://.godot/imported/scene_ice.png-3ff2e47b4e2e84052ad9b8ad4139d30e.s3tc.ctex"
+path.etc2="res://.godot/imported/scene_ice.png-3ff2e47b4e2e84052ad9b8ad4139d30e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Trash Room Scene/scene_ice.png"
-dest_files=["res://.godot/imported/scene_ice.png-3ff2e47b4e2e84052ad9b8ad4139d30e.s3tc.ctex"]
+dest_files=["res://.godot/imported/scene_ice.png-3ff2e47b4e2e84052ad9b8ad4139d30e.s3tc.ctex", "res://.godot/imported/scene_ice.png-3ff2e47b4e2e84052ad9b8ad4139d30e.etc2.ctex"]
 
 [params]
 

@@ -50,6 +50,7 @@ points = PackedVector3Array(0.079331875, 0.04164396, 0.0486, -0.07744539, -3.469
 [node name="Ciggy" type="RigidBody3D" node_paths=PackedStringArray("object_mesh", "collision_shape")]
 collision_layer = 2
 collision_mask = 2
+mass = 0.2
 physics_material_override = SubResource("PhysicsMaterial_wr2yr")
 script = ExtResource("1_wr2yr")
 object_mesh = NodePath("cigs_packet_1")
